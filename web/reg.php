@@ -42,9 +42,15 @@
 
 <p>
     <label>Ваш email:<br></label>
-    <input name="login" type="email" size="15" maxlength="15">
+    <input name="email" type="email" size="15" maxlength="15">
     </p>
 
+<p>
+    <label>Ваш догин:<br></label>
+    <input name="login" type="text" size="15" maxlength="15">
+    </p>
+
+        <p>
 
 <p>
     <label>Ваш пароль:<br></label>

@@ -6,5 +6,5 @@
  * Time: 18:55
  */
 $db = mysql_connect ("localhost","root","1111");
-mysql_select_db ("user",$db);
+mysql_select_db ("users",$db);
 ?>
