@@ -28,8 +28,19 @@ $password = trim($password);
 // подключаемся к базе
 include ("bd.php");// файл bd.php должен быть в той же папке, что и все остальные, если это не так, то просто измените путь
 
-$result = mysql_query("SELECT * FROM reg WHERE login='$login'",$db); //извлекаем из базы все данные о пользователе с введенным логином
-$myrow = mysql_fetch_array($result);
+$result = $conn->query('SELECT * FROM reg WHERE login= '.$conn->quote($login));
+//$stmt = $conn->prepare('SELECT * FROM reg WHERE id = :id');
+//$stmt->execute(array('id' => $id));
+//$result = $stmt->fetchAll();
+if ( count($result) ) {
+    foreach($result as $myrow) {
+        // print_r($myrow);
+    }
+} else {
+    echo "Ничего не найдено.";
+}
+//$result = mysqli_query("SELECT * FROM reg WHERE login='$login'",$db); //извлекаем из базы все данные о пользователе с введенным логином
+//$myrow = mysqli_fetch_array($result);
 if (empty($myrow['password']))
 {
     //если пользователя с введенным логином не существует

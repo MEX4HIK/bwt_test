@@ -27,8 +27,8 @@
         <p> Выберите ваш пол </p>
         <form>
             <select name="sex" >
-                <option value="m"> Мужской </option>
-                <option value="f"> Женский </option>
+                <option value="m"> male </option>
+                <option value="f"> famele </option>
             </select>
         </form>
     </p>
