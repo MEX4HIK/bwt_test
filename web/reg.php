@@ -11,7 +11,7 @@
 <p>
     <label>Ваше имя:<br></label>
     <input name="name" type="text" size="15" maxlength="15" required="true">
-    <h:message for="name"/>
+  
 </p>
 
 <p>

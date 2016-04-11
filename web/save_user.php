@@ -14,13 +14,24 @@ if (isset($_POST['sex'])) { $sex = $_POST['sex']; if ($sex  == '') { unset($sex)
 if (isset($_POST['date'])) { $date = $_POST['date']; if ($date == '') { unset($date);} }
 if (isset($_POST['email'])) { $email = $_POST['email']; if ($email == '') { unset($email);}}
 if (isset($_POST['login'])) { $login = $_POST['login']; if ($login == '') { unset($login);}}
-
 if (isset($_POST['password'])) { $password = $_POST['password']; if ($password =='') { unset($password);} }
+
+
+echo "<html>
+    <form action=\"save_user.php\" method=\"post\">
+    <label>Ваше имя:<br></label>
+    <input name=\"name\" type=\"text\" size=\"15\" maxlength=\"15\">
+    <input type=\"submit\" name=\"submit\" value=\"Проверка\">
+</form>
+</html>";
+
 
 if ( empty($name) or empty($last_name) or empty($sex) or empty($date) or empty($email) or empty($login) or empty($password))
 {
     exit ("Вы ввели не всю информацию, вернитесь назад и заполните все поля!");
+
 }
+
 $name = stripslashes($name);
 $name = htmlspecialchars($name);
 $last_name = stripslashes($last_name);
@@ -38,13 +49,17 @@ $password = htmlspecialchars($password);
 
 $name = trim($name);
 $last_name = trim($last_name);
-
 $sex = trim($sex);
 $date = trim($date);
 $email = trim($email);
 $login = trim($login);
 $password = trim($password);
 
+//Валидация
+if (isset($_POST['name']))
+{
+    echo"Ты че творишь";
+}
 
 include ("bd.php");
 
@@ -65,6 +80,8 @@ if (!empty($myrow['id'])) {
 //var_dump("INSERT INTO reg (name,last_name,date,sex,email,login,password) VALUES('$name','$last_name','$date','$sex','$email','$login','$password')");
 $result2 = $conn->query ("INSERT INTO reg (name,last_name,sex,date,email,login,password) VALUES('$name','$last_name','$sex','$date','$email','$login','$password')");
 
+
+
 if ($result2)
 {
     echo "Вы успешно зарегистрированы! Теперь вы можете зайти на сайт. <a href='index.php'>Главная страница</a>";
@@ -72,4 +89,8 @@ if ($result2)
 else {
     echo "Ошибка! Вы не зарегистрированы.";
 }
+
+
+
 ?>
+
