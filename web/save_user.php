@@ -10,8 +10,8 @@
  */
 if (isset($_POST['name'])) { $name = $_POST['name']; if ($name == '') { unset($name);}}
 if (isset($_POST['last_name'])) { $last_name = $_POST['last_name']; if ($last_name == '') { unset($last_name);}}
-if (isset($_POST['sex'])) { $sex = $_POST['sex']; if ($sex  == '') { unset($sex);} }
-if (isset($_POST['date'])) { $date = $_POST['date']; if ($date == '') { unset($date);} }
+if (isset($_POST['sex'])) { $sex = $_POST['sex'];  }
+if (isset($_POST['date'])) { $date = $_POST['date'];  }
 if (isset($_POST['email'])) { $email = $_POST['email']; if ($email == '') { unset($email);}}
 if (isset($_POST['login'])) { $login = $_POST['login']; if ($login == '') { unset($login);}}
 if (isset($_POST['password'])) { $password = $_POST['password']; if ($password =='') { unset($password);} }
@@ -35,7 +35,7 @@ if (isset($_POST['name']))
     else {echo "Вы ввели имя<br>";}
 }
 
-if ( empty($name) or empty($last_name) or empty($sex) or empty($date) or empty($email) or empty($login) or empty($password))
+if ( empty($name) or empty($last_name)  or empty($email) or empty($login) or empty($password))
 {
     echo ("Вы ввели не всю информацию, вернитесь назад и заполните все поля!<br>");
 
