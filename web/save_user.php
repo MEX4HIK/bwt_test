@@ -25,10 +25,19 @@ echo "<html>
 </form>
 </html>";
 
+//Валидация
+if (isset($_POST['name']))
+{
+    if (empty($_POST['name'])) {
+        echo "Введите имя!<br>";
+
+    }
+    else {echo "Вы ввели имя<br>";}
+}
 
 if ( empty($name) or empty($last_name) or empty($sex) or empty($date) or empty($email) or empty($login) or empty($password))
 {
-    exit ("Вы ввели не всю информацию, вернитесь назад и заполните все поля!");
+    exit ("Вы ввели не всю информацию, вернитесь назад и заполните все поля!<br>");
 
 }
 
@@ -55,11 +64,6 @@ $email = trim($email);
 $login = trim($login);
 $password = trim($password);
 
-//Валидация
-if (isset($_POST['name']))
-{
-    echo"Ты че творишь";
-}
 
 include ("bd.php");
 
