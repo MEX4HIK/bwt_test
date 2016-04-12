@@ -16,7 +16,7 @@
 #откуда будем парсить информацию:
 $gismeteo = 'http://www.gismeteo.ua/city/daily/5093/';
 $content = file_get_contents ($gismeteo);
-preg_match_all ('#<div class="wtitle h2"><span>Прогноз</span>(.*?)<div class="wsection wdat">#is', $content,$pogoda);
+preg_match_all ('#<div class="wtitle h2"><span>Прогноз</span>(.*?)<div class="wsection wdata">#is', $content,$pogoda);
 var_dump($pogoda[0]);
 
 /*$lurl=get_fcontent("http://www.gismeteo.ua/city/daily/5093/");
