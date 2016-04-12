@@ -56,6 +56,7 @@ else
 
     
     echo "Вы вошли на сайт, как ".$_SESSION['login'];
+    echo "<br><a href=\"pars.php\"><br>Погода</a>";
 }
 ?>
 </body>

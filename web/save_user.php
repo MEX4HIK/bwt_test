@@ -37,7 +37,7 @@ if (isset($_POST['name']))
 
 if ( empty($name) or empty($last_name) or empty($sex) or empty($date) or empty($email) or empty($login) or empty($password))
 {
-    exit ("Вы ввели не всю информацию, вернитесь назад и заполните все поля!<br>");
+    echo ("Вы ввели не всю информацию, вернитесь назад и заполните все поля!<br>");
 
 }
 

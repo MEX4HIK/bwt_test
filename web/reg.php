@@ -16,7 +16,7 @@
 
 <p>
     <label>Ваша фамилия:<br></label>
-    <input name="last_name" type="text" size="15" maxlength="25">
+    <input name="last_name" type="text" size="15" maxlength="25" required="true">
     </p>
 
 
@@ -43,19 +43,19 @@
 
 <p>
  <label>Ваш email:<br></label>
- <input name="email" type="text" size="15" maxlength="25">
+ <input name="email" type="text" size="15" maxlength="25" required="true">
  </p>
 
 <p>
  <label>Ваш логин:<br></label>
- <input name="login" type="text" size="15" maxlength="15">
+ <input name="login" type="text" size="15" maxlength="15" required="true">
  </p>
 
 
 
 <p>
  <label>Ваш пароль:<br></label>
- <input name="password" type="password" size="15" maxlength="15">
+ <input name="password" type="password" size="15" maxlength="15" required="true">
  </p>
 
 <p>

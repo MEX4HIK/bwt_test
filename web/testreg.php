@@ -36,9 +36,7 @@ if ( count($result) ) {
     foreach($result as $myrow) {
         // print_r($myrow);
     }
-} else {
-    echo "Ничего не найдено.";
-}
+} 
 //$result = mysqli_query("SELECT * FROM reg WHERE login='$login'",$db); //извлекаем из базы все данные о пользователе с введенным логином
 //$myrow = mysqli_fetch_array($result);
 if (empty($myrow['password']))
@@ -58,7 +56,7 @@ else {
     else {
         //если пароли не сошлись
 
-        exit ("Извините, введённый вами login или пароль неверный.");
+        exit ("Извините, вы ввели не верный пароль");
     }
 }
 ?>
