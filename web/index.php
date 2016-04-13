@@ -43,9 +43,7 @@
 
         <a href="reg.php">Зарегистрироваться</a>
     </p></form>
-<form>
-    <input type="submit" name="submitData" value="Выход" />
-</form>
+
 <br>
 
 <?php
@@ -74,6 +72,12 @@ else
    // echo "<br><a href=\"exit.php\">Выход</a>";
     echo "<br><a href=\"pars.php\"><br>Погода</a>";
     echo "<br><a href=\"feedback.php\">Обратная связь</a>";
+
+    echo "<html>
+    <form><br>
+    <input type=\"submit\" name=\"submitData\" value=\"Выход\" >
+    </form>
+    </html>";
 }
 ?>
 </body>
