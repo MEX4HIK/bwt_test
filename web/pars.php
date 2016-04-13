@@ -1,5 +1,6 @@
 <html>
 <meta charset="utf-8">
+<h2>Погода в Запорожье</h2>
 </html>
 <?php
 /**
@@ -18,9 +19,12 @@ $gismeteo = 'http://www.gismeteo.ua/city/daily/5093/';
 $content = file_get_contents ($gismeteo);
 preg_match_all ('#<div class="wsection wdata">(.*?)<div class="section bottom">#is', $content,$pogoda);
 //var_dump($pogoda[0]);
-print_r ($pogoda[0]);
+//print_r ($pogoda[0]);
+echo $pogoda[0][0];
+/*$a = ['test' => [['lol', 'lol2', 'lol3' => 'lol4'], 'lol5']];
 
-
+echo $a['test'][0]['lol3'] ;
+echo $a['test'][1];*/
 
 /*$lurl=get_fcontent("http://www.gismeteo.ua/city/daily/5093/");
 echo"cid:".$lurl[0]."<BR>";
