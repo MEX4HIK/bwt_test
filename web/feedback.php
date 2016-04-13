@@ -23,7 +23,7 @@
         <label>Ваше сообщение:<br></label>
         <textarea name="message" rows="10" cols="40" required="true"></textarea>
     </p>
-    <input type="submit" name="submit" value="Зарегистрироваться">
+    <input type="submit" name="submit" value="Оставить отзыв">
 
     </p></form>
 </body>
