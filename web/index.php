@@ -50,6 +50,7 @@ if (empty($_SESSION['login']) or empty($_SESSION['id']))
 {
     
     echo "Вы вошли на сайт, как гость";
+    echo "<br><a href=\"feedback.php\"><br>Обратная связь</a>";
 }
 else
 {
@@ -57,6 +58,7 @@ else
     
     echo "Вы вошли на сайт, как ".$_SESSION['login'];
     echo "<br><a href=\"pars.php\"><br>Погода</a>";
+    echo "<br><a href=\"feedback.php\">Обратная связь</a>";
 }
 ?>
 </body>
