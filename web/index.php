@@ -40,10 +40,24 @@
 
       
         <br>
-      
+
         <a href="reg.php">Зарегистрироваться</a>
     </p></form>
+<form>
+    <input type="submit" name="submitData" value="Выход" />
+</form>
 <br>
+
+<?php
+if (isset($_REQUEST['submitData']))
+{session_start();
+    unset($_SESSION['password']);
+    unset($_SESSION['login']);
+    unset($_SESSION['id']);//    уничтожаем переменные в сессиях
+    exit("<html><head><meta    http-equiv='Refresh' content='0;    URL=index.php'></head></html>");;}//в этом примере по нажатии кнопки выводится текст, может быть любой код.
+?>
+
+
 <?php
 
 if (empty($_SESSION['login']) or empty($_SESSION['id']))
@@ -57,10 +71,12 @@ else
 
     
     echo "Вы вошли на сайт, как ".$_SESSION['login'];
-    echo "<br><a href=\"exit.php\">Выход</a>";
+   // echo "<br><a href=\"exit.php\">Выход</a>";
     echo "<br><a href=\"pars.php\"><br>Погода</a>";
     echo "<br><a href=\"feedback.php\">Обратная связь</a>";
 }
 ?>
 </body>
 </html>
+
+
