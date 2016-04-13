@@ -43,7 +43,7 @@
 
 <p>
  <label>Ваш email:<br></label>
- <input name="email" type="text" size="15" maxlength="25" required="true">
+ <input name="email" type="email" size="15" maxlength="25" required="true">
  </p>
 
 <p>
