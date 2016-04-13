@@ -23,6 +23,12 @@
         <label>Ваше сообщение:<br></label>
         <textarea name="message" rows="10" cols="40" required="true"></textarea>
     </p>
+
+    <img src="capcha.php" alt="защитный код" >
+    <br>
+    <input name="capcha" type="text" size="12" maxlength="25" required="true">
+
+<br>
     <input type="submit" name="submit" value="Оставить отзыв">
 
     </p></form>
