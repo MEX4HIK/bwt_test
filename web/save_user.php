@@ -40,61 +40,58 @@ if ( empty($name) or empty($last_name)  or empty($email) or empty($login) or emp
     echo ("Вы ввели не всю информацию, вернитесь назад и заполните все поля!<br>");
 
 }
-
-$name = stripslashes($name);
-$name = htmlspecialchars($name);
-$last_name = stripslashes($last_name);
-$last_name = htmlspecialchars($last_name);
-$sex = stripslashes($sex);
-$sex = htmlspecialchars($sex);
-$date = stripslashes($date);
-$date = htmlspecialchars($date);
-$email = stripslashes($email);
-$email = htmlspecialchars($email);
-$login = stripslashes($login);
-$login = htmlspecialchars($login);
-$password = stripslashes($password);
-$password = htmlspecialchars($password);
-
-$name = trim($name);
-$last_name = trim($last_name);
-$sex = trim($sex);
-$date = trim($date);
-$email = trim($email);
-$login = trim($login);
-$password = trim($password);
-
-
-include ("bd.php");
-
-$result = $conn->query("SELECT id FROM reg WHERE login='$login'");
-//$myrow = mysqli_fetch_array($result);
-if ( count($result) ) {
-    foreach($result as $myrow) {
-        // print_r($myrow);
-    }
-} else {
-    echo "--------";
-}
-
-
-if (!empty($myrow['id'])) {
-    exit ("Извините, введённый вами логин уже зарегистрирован. Введите другой логин.");
-}
-//var_dump("INSERT INTO reg (name,last_name,date,sex,email,login,password) VALUES('$name','$last_name','$date','$sex','$email','$login','$password')");
-$result2 = $conn->query ("INSERT INTO reg (name,last_name,sex,date,email,login,password) VALUES('$name','$last_name','$sex','$date','$email','$login','$password')");
-
-
-
-if ($result2)
-{
-    echo "Вы успешно зарегистрированы! Теперь вы можете зайти на сайт. <a href='index.php'>Главная страница</a>";
-}
 else {
-    echo "Ошибка! Вы не зарегистрированы.";
+    $name = stripslashes($name);
+    $name = htmlspecialchars($name);
+    $last_name = stripslashes($last_name);
+    $last_name = htmlspecialchars($last_name);
+    $sex = stripslashes($sex);
+    $sex = htmlspecialchars($sex);
+    $date = stripslashes($date);
+    $date = htmlspecialchars($date);
+    $email = stripslashes($email);
+    $email = htmlspecialchars($email);
+    $login = stripslashes($login);
+    $login = htmlspecialchars($login);
+    $password = stripslashes($password);
+    $password = htmlspecialchars($password);
+
+    $name = trim($name);
+    $last_name = trim($last_name);
+    $sex = trim($sex);
+    $date = trim($date);
+    $email = trim($email);
+    $login = trim($login);
+    $password = trim($password);
+
+
+    include("bd.php");
+
+    $result = $conn->query("SELECT id FROM reg WHERE login=" . $conn->quote($login));
+//$myrow = mysqli_fetch_array($result);
+    if (count($result)) {
+        foreach ($result as $myrow) {
+            // print_r($myrow);
+        }
+    } else {
+        echo "--------";
+    }
+
+
+    if (!empty($myrow['id'])) {
+        exit ("Извините, введённый вами логин уже зарегистрирован. Введите другой логин.");
+    }
+//var_dump("INSERT INTO reg (name,last_name,date,sex,email,login,password) VALUES('$name','$last_name','$date','$sex','$email','$login','$password')");
+    $result2 = $conn->query("INSERT INTO reg (name,last_name,sex,date,email,login,password) VALUES('$name','$last_name','$sex','$date','$email','$login','$password')");
+
+
+    if ($result2) {
+        echo "Вы успешно зарегистрированы! Теперь вы можете зайти на сайт. <a href='index.php'>Главная страница</a>";
+    } else {
+        echo "Ошибка! Вы не зарегистрированы.";
+    }
+
+
 }
-
-
-
 ?>
 
