@@ -20,47 +20,41 @@
     </p>
 
 
-    <!-- <p> Выберите ваш пол </p>
-     <form>
+     <p> Выберите ваш пол </p>
+
          <select name="sex" >
-             <option value="m"> male </option>
-             <option value="f"> famele </option>
+             <option value="m"> Мужской </option>
+             <option value="f"> Женский </option>
          </select>
-     </form>
- </p>
--->
 
-        <p>
-            <label>Ваш пол:<br></label>
-            <input name="sex" type="text" size="15" maxlength="15">
-        </p>
-
-<p>
- <label>Дата рождения:<br></label>
- <input name="date" type="text" size="15" maxlength="15">
  </p>
 
-
-<p>
- <label>Ваш email:<br></label>
- <input name="email" type="email" size="15" maxlength="25" required="true">
- </p>
-
-<p>
- <label>Ваш логин:<br></label>
- <input name="login" type="text" size="15" maxlength="15" required="true">
- </p>
+ <p>
+  <label>Дата рождения:<br></label>
+  <input name="date" type="date" size="15" maxlength="15">
+  </p>
 
 
+ <p>
+  <label>Ваш email:<br></label>
+  <input name="email" type="email" size="15" maxlength="25" required="true">
+  </p>
 
-<p>
- <label>Ваш пароль:<br></label>
- <input name="password" type="password" size="15" maxlength="15" required="true">
- </p>
+ <p>
+  <label>Ваш логин:<br></label>
+  <input name="login" type="text" size="15" maxlength="15" required="true">
+  </p>
 
-<p>
- <input type="submit" name="submit" value="Зарегистрироваться">
 
-</p></form>
- </body>
- </html>
+
+ <p>
+  <label>Ваш пароль:<br></label>
+  <input name="password" type="password" size="15" maxlength="15" required="true">
+  </p>
+
+ <p>
+  <input type="submit" name="submit" value="Зарегистрироваться">
+
+ </p></form>
+  </body>
+  </html>
