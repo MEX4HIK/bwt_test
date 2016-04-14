@@ -43,31 +43,9 @@ echo "<html>
 </html>";
 }
 ?>
-
-<!--<form action="testreg.php" method="post">
-
-
-   
-    <p>
-        <label>Ваш логин:<br></label>
-        <input name="login" type="text" size="15" maxlength="15">
-    </p>
-
-    <p>
-
-        <label>Ваш пароль:<br></label>
-        <input name="password" type="password" size="15" maxlength="15">
-    </p>
-    <p>
-        <input type="submit" name="submit" value="Войти">
-        <br>
-
-        <a href="reg.php">Зарегистрироваться</a>
-    </p></form>
-
-<br>
--->
 <?php
+
+/*выход пользователя из сессии */
 if (isset($_REQUEST['submitData']))
 {session_start();
     unset($_SESSION['password']);
@@ -87,14 +65,12 @@ if (empty($_SESSION['login']) or empty($_SESSION['id']))
 }
 else
 {
-
-    
     echo "Вы вошли на сайт, как ".$_SESSION['login'];
-   // echo "<br><a href=\"exit.php\">Выход</a>";
     echo "<br><a href=\"pars.php\"><br>Погода</a>";
     echo "<br><a href=\"feedback.php\">Обратная связь</a>";
     echo "<br><a href=\"list_feedback.php\">Список отзывов</a>";
 
+//Форма выхода пользователя
     echo "<html>
     <form><br>
     <input type=\"submit\" name=\"submitData\" value=\"Выход\" >
