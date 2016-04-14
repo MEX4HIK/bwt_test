@@ -24,21 +24,13 @@
         <input name="login" type="text" size="15" maxlength="15">
     </p>
 
-
-   
-
     <p>
 
         <label>Ваш пароль:<br></label>
         <input name="password" type="password" size="15" maxlength="15">
     </p>
-
-   
-
     <p>
         <input type="submit" name="submit" value="Войти">
-
-      
         <br>
 
         <a href="reg.php">Зарегистрироваться</a>
@@ -72,6 +64,7 @@ else
    // echo "<br><a href=\"exit.php\">Выход</a>";
     echo "<br><a href=\"pars.php\"><br>Погода</a>";
     echo "<br><a href=\"feedback.php\">Обратная связь</a>";
+    echo "<br><a href=\"list_feedback.php\">Список отзывов</a>";
 
     echo "<html>
     <form><br>
