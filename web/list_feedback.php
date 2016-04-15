@@ -2,6 +2,10 @@
 <meta charset="utf-8">
 <head>
     <title>Список отзывов</title>
+    <!-- Bootstrap-->
+
+    <link href = "css/bootstrap.css" rel="stylesheet">
+    <link href = "css/style.css" rel="stylesheet">
 </head>
 <body>
 <h2>Список отзывов</h2>

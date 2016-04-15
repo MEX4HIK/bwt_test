@@ -3,6 +3,10 @@
 <head>
     <meta charset="utf-8">
     <title>Отзыв</title>
+    <!-- Bootstrap-->
+
+    <link href = "css/bootstrap.css" rel="stylesheet">
+    <link href = "css/style.css" rel="stylesheet">
 </head>
 <body>
 <h2>Отзыв</h2>

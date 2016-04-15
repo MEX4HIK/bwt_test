@@ -1,5 +1,10 @@
 <html>
 <meta charset="utf-8">
+<!-- Bootstrap-->
+
+<link href = "css/bootstrap.css" rel="stylesheet">
+<link href = "css/style.css" rel="stylesheet">
+
 <h2>Погода в Запорожье</h2>
 </html>
 <?php
