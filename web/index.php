@@ -13,9 +13,25 @@
 <head>
     <meta charset="utf-8">
     <title>Главная страница</title>
+    <!-- Bootstrap-->
+
+    <link href = "css/bootstrap.css" rel="stylesheet">
+    <link href = "css/style.css" rel="stylesheet">
 </head>
 <body>
-<h2>Главная страница</h2>
+
+<!-- <div class="container">
+     <div class="row">
+         <h2>Главная страница</h2>
+         <div class="navbar navbar.inverse">
+             <div class="container">
+                 <div class="navbar-header">
+
+                 </div>
+                 <div class="collapse navbar-collapse" id="responsiv-menu">
+                     <ul class="nav navbar-nav">
+                         <li>  -->
+
 <?php
 if (empty($_SESSION['login']) or empty($_SESSION['id'])){
 echo "<html>
@@ -66,16 +82,39 @@ if (empty($_SESSION['login']) or empty($_SESSION['id']))
 else
 {
     echo "Вы вошли на сайт, как ".$_SESSION['login'];
-    echo "<br><a href=\"pars.php\"><br>Погода</a>";
-    echo "<br><a href=\"feedback.php\">Обратная связь</a>";
-    echo "<br><a href=\"list_feedback.php\">Список отзывов</a>";
-
-//Форма выхода пользователя
+    //Форма выхода пользователя
     echo "<html>
     <form><br>
     <input type=\"submit\" name=\"submitData\" value=\"Выход\" >
     </form>
     </html>";
+   echo "<html>
+    <div class=\"container\">
+     <div class=\"row\">
+         <h2>Главная страница</h2>
+         <div class=\"navbar navbar-inverse\">
+             <div class=\"container\">
+                 <div class=\"navbar-header\">
+                 
+                 </div>
+                 <div class=\"collapse navbar-collapse\" id=\"responsiv-menu\">
+                     <ul class=\"nav navbar-nav\">
+                      <li> <br><a href=\"pars . php\"><br>Погода</a>
+                      <li> <br><a href=\"feedback.php\"><br>Обратная связь</a>
+                      <li> <br><a href=\"list_feedback.php\"><br>Список отзывов</a>
+                </ul> 
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+    </html>";
+
+   /* echo "<br><a href=\"pars.php\"><br>Погода</a>";
+    echo "<br><a href=\"feedback.php\">Обратная связь</a>";
+    echo "<br><a href=\"list_feedback.php\">Список отзывов</a>";*/
+
+
 }
 ?>
 </body>
