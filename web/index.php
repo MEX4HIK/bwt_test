@@ -103,13 +103,14 @@ if (empty($_SESSION['login']) or empty($_SESSION['id']))
 else
 {
 
-
+$a = "Вы вошли на сайт, как ".$_SESSION['login'];
 
     //bootstrap menu
    echo "<html>
     <div class=\"container\">
      <div class=\"row\">
          <h2>Главная страница</h2>
+         $a
          <div class=\"navbar navbar-inverse\">
              <div class=\"container\">
                  <div class=\"navbar-header\">
@@ -123,7 +124,7 @@ else
                 </ul> 
                   </div>
                   </div>
-                   
+                  
                   </div>
                   <form><br>
                   <!--Форма выхода пользователя-->
@@ -132,7 +133,7 @@ else
                   </div>
                   </div>
     </html>";
-    echo "Вы вошли на сайт, как ".$_SESSION['login'];
+
 
 
    /* echo "<br><a href=\"pars.php\"><br>Погода</a>";
