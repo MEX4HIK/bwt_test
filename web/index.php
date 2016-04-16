@@ -84,14 +84,12 @@ if (empty($_SESSION['login']) or empty($_SESSION['id']))
          <div class=\"navbar navbar-inverse\">
              <div class=\"container\">
                  <div class=\"navbar-header\">
-                 
                  </div>
                  <div class=\"collapse navbar-collapse\" id=\"responsiv-menu\">
                      <ul class=\"nav navbar-nav\">
                       <li> <br><a href=\"feedback.php\"><br>Обратная связь</a>
                   </ul> 
                   </div>
-                  
                   </div>
                   </div>
                   </div>
@@ -114,7 +112,6 @@ $a = "Вы вошли на сайт, как ".$_SESSION['login'];
          <div class=\"navbar navbar-inverse\">
              <div class=\"container\">
                  <div class=\"navbar-header\">
-                 
                  </div>
                  <div class=\"collapse navbar-collapse\" id=\"responsiv-menu\">
                      <ul class=\"nav navbar-nav\">
@@ -124,7 +121,6 @@ $a = "Вы вошли на сайт, как ".$_SESSION['login'];
                 </ul> 
                   </div>
                   </div>
-                  
                   </div>
                   <form><br>
                   <!--Форма выхода пользователя-->
