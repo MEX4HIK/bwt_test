@@ -50,7 +50,7 @@ if (isset($_REQUEST['submitData']))
 if (empty($_SESSION['login']) or empty($_SESSION['id']))
 {
     
-    echo "Вы вошли на сайт, как гость";
+
     //bootstrap menu
     echo "<html>
     <div class=\"container\">
@@ -71,17 +71,13 @@ if (empty($_SESSION['login']) or empty($_SESSION['id']))
                   </div>
                   </div>
     </html>";
+    echo "Вы вошли на сайт, как гость";
     //echo "<br><a href=\"feedback.php\"><br>Обратная связь</a>";
 }
 else
 {
-    echo "Вы вошли на сайт, как ".$_SESSION['login'];
-    //Форма выхода пользователя
-    echo "<html>
-    <form><br>
-    <input type=\"submit\" name=\"submitData\" value=\"Выход\" >
-    </form>
-    </html>";
+
+
 
     //bootstrap menu
    echo "<html>
@@ -95,17 +91,26 @@ else
                  </div>
                  <div class=\"collapse navbar-collapse\" id=\"responsiv-menu\">
                      <ul class=\"nav navbar-nav\">
-                      <li> <br><a href=\"pars . php\"><br>Погода</a>
+                      <li> <br><a href=\"pars.php\"><br>Погода</a>
                       <li> <br><a href=\"feedback.php\"><br>Обратная связь</a>
                       <li> <br><a href=\"list_feedback.php\"><br>Список отзывов</a>
                 </ul> 
                   </div>
                   </div>
+                   
                   </div>
+                  <form><br>
+                  
+                   <input type=\"submit\" name=\"submitData\" value=\"Выход\" >
+                   </form>
                   </div>
                   </div>
     </html>";
-
+    echo "Вы вошли на сайт, как ".$_SESSION['login'];
+    //Форма выхода пользователя
+    echo "<html>
+   
+    </html>";
    /* echo "<br><a href=\"pars.php\"><br>Погода</a>";
     echo "<br><a href=\"feedback.php\">Обратная связь</a>";
     echo "<br><a href=\"list_feedback.php\">Список отзывов</a>";*/
@@ -116,9 +121,10 @@ else
 <?php
 if (empty($_SESSION['login']) or empty($_SESSION['id'])){
     echo "<html>
-    <form action=\"testreg.php\" method=\"post\">
+    <!--<form action=\"testreg.php\" method=\"post\">-->
 
-   
+ <!--  <form role=\"form\" action=\"testreg.php\" method=\"post\">
+
     <p>
         <label>Ваш логин:<br></label>
         <input name=\"login\" type=\"text\" size=\"15\" maxlength=\"15\">
@@ -134,7 +140,17 @@ if (empty($_SESSION['login']) or empty($_SESSION['id'])){
         <br>
 
         <a href=\"reg.php\">Зарегистрироваться</a>
-    </p></form>
+    </p></form>-->
+    <form role=\"form\" action=\"testreg.php\" method=\"post\">
+    <div class=\"form-group\">
+    <label for=\"login\">Введите логин</label><input type=\"text\" name=\"login\" class=\"form-control\" id=\"login\">
+    </div>
+    <div class=\"form-group\">
+    <label for=\"password\">Введите пароль</label><input type=\"password\" name=\"password\" class=\"form-control\" id=\"password\">
+    </div>
+          <button type=\"submit\" class=\"btn btn-success\">Войти</button>
+    <br>
+    </form>
 
 <br>
 </html>";
