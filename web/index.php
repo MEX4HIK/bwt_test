@@ -32,33 +32,7 @@
                      <ul class="nav navbar-nav">
                          <li>  -->
 
-<?php
-if (empty($_SESSION['login']) or empty($_SESSION['id'])){
-echo "<html>
-    <form action=\"testreg.php\" method=\"post\">
 
-   
-    <p>
-        <label>Ваш логин:<br></label>
-        <input name=\"login\" type=\"text\" size=\"15\" maxlength=\"15\">
-    </p>
-
-    <p>
-
-        <label>Ваш пароль:<br></label>
-        <input name=\"password\" type=\"password\" size=\"15\" maxlength=\"15\">
-    </p>
-    <p>
-        <input type=\"submit\" name=\"submit\" value=\"Войти\">
-        <br>
-
-        <a href=\"reg.php\">Зарегистрироваться</a>
-    </p></form>
-
-<br>
-</html>";
-}
-?>
 <?php
 
 /*выход пользователя из сессии */
@@ -77,7 +51,27 @@ if (empty($_SESSION['login']) or empty($_SESSION['id']))
 {
     
     echo "Вы вошли на сайт, как гость";
-    echo "<br><a href=\"feedback.php\"><br>Обратная связь</a>";
+    //bootstrap menu
+    echo "<html>
+    <div class=\"container\">
+     <div class=\"row\">
+         <h2>Главная страница</h2>
+         <div class=\"navbar navbar-inverse\">
+             <div class=\"container\">
+                 <div class=\"navbar-header\">
+                 
+                 </div>
+                 <div class=\"collapse navbar-collapse\" id=\"responsiv-menu\">
+                     <ul class=\"nav navbar-nav\">
+                      <li> <br><a href=\"feedback.php\"><br>Обратная связь</a>
+                  </ul> 
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+    </html>";
+    //echo "<br><a href=\"feedback.php\"><br>Обратная связь</a>";
 }
 else
 {
@@ -88,6 +82,8 @@ else
     <input type=\"submit\" name=\"submitData\" value=\"Выход\" >
     </form>
     </html>";
+
+    //bootstrap menu
    echo "<html>
     <div class=\"container\">
      <div class=\"row\">
@@ -115,6 +111,33 @@ else
     echo "<br><a href=\"list_feedback.php\">Список отзывов</a>";*/
 
 
+}
+?>
+<?php
+if (empty($_SESSION['login']) or empty($_SESSION['id'])){
+    echo "<html>
+    <form action=\"testreg.php\" method=\"post\">
+
+   
+    <p>
+        <label>Ваш логин:<br></label>
+        <input name=\"login\" type=\"text\" size=\"15\" maxlength=\"15\">
+    </p>
+
+    <p>
+
+        <label>Ваш пароль:<br></label>
+        <input name=\"password\" type=\"password\" size=\"15\" maxlength=\"15\">
+    </p>
+    <p>
+        <input type=\"submit\" name=\"submit\" value=\"Войти\">
+        <br>
+
+        <a href=\"reg.php\">Зарегистрироваться</a>
+    </p></form>
+
+<br>
+</html>";
 }
 ?>
 </body>
