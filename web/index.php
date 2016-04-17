@@ -22,6 +22,7 @@ include ("func_menu.php");
 <body>
 
 
+
 <?php
 
 
@@ -72,8 +73,9 @@ $a = "Вы вошли на сайт, как ".$_SESSION['login'];
                
                
            <h3> $a</h3>
-                <form>
-    <button type=\"submit\" class=\"btn btn-danger\">Выйти</button>
+              <form role=\"form\" action=\"exit.php\" method=\"SESSION\">
+<br>
+<button type=\"submit\" class=\"btn btn-danger\">Выйти</button>
 </form>";
 
 
