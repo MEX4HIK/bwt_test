@@ -1,64 +1,59 @@
+<?php
+include ("func_menu.php");
+
+
+$array1=[['index.php','Главная страница'],['feedback.php','Обратная связь']];
+echo menu($array1);
+?>
+
 <html xmlns:h="http://www.w3.org/1999/XSL/Transform">
-
-    <head>
-        <meta charset="utf-8">
+<meta charset="utf-8">
+<link href = "css/bootstrap.css" rel="stylesheet">
+<head>
     <title>Регистрация</title>
-        <!-- Bootstrap-->
-
-        <link href = "css/bootstrap.css" rel="stylesheet">
-        <link href = "css/style.css" rel="stylesheet">
-    </head>
-    <body>
+</head>
+<body>
+<div class="navbar-header">
     <h2>Регистрация</h2>
-    <form action="save_user.php" method="post">
-
-<p>
-    <label>Ваше имя:<br></label>
-    <input name="name" type="text" size="15" maxlength="15" required="true">
-  
-</p>
-
-<p>
-    <label>Ваша фамилия:<br></label>
-    <input name="last_name" type="text" size="15" maxlength="25" required="true">
-    </p>
-
-
-     <p> Выберите ваш пол </p>
-
-         <select name="sex" >
-             <option value="m"> Мужской </option>
-             <option value="f"> Женский </option>
-         </select>
-
- </p>
-
- <p>
-  <label>Дата рождения:<br></label>
-  <input name="date" type="date" size="15" maxlength="15">
-  </p>
-
-
- <p>
-  <label>Ваш email:<br></label>
-  <input name="email" type="email" size="15" maxlength="25" required="true">
-  </p>
-
- <p>
-  <label>Ваш логин:<br></label>
-  <input name="login" type="text" size="15" maxlength="15" required="true">
-  </p>
-
-
-
- <p>
-  <label>Ваш пароль:<br></label>
-  <input name="password" type="password" size="15" maxlength="15" required="true">
-  </p>
-
- <p>
-  <input type="submit" name="submit" value="Зарегистрироваться">
-
- </p></form>
-  </body>
-  </html>
+    <br>
+    <div class="tab-content">
+        <div id="reg.php" class="tab-pane fade in active">
+            <form data-toggle="validator" role="form" action="save_user.php" method="post">
+                <div class="form-group">
+                    <label for="name">Имя пользователя:</label>
+                    <input name="name" type="text" class="form-control" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="last_name">Фамилия:</label>
+                    <input name="last_name" type="text" class="form-control" id="last_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="date">Дата рождения:</label>
+                    <input name="date" type="date" class="form-control" id="date">
+                </div>
+                <div class="form-group">
+                    <label for="sex">Ваш пол:</label>
+                    <select name="sex" class="form-control" id="sex">
+                        <option value="m"> мужской </option>
+                        <option value="f"> женский </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input name="email" type="email" class="form-control" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login">Login:</label>
+                    <input name="login" type="text" class="form-control" id="login" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Пароль:</label>
+                    <input name="password" type="password" class="form-control" id="password" required>
+                </div>
+                <button type="submit" class="btn btn-success">Зарегистрироваться</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
