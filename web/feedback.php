@@ -1,3 +1,21 @@
+<?php
+
+session_start();
+
+include ("func_menu.php");
+
+if (empty($_SESSION['login']) or empty($_SESSION['id'])){
+    $array1=[['index.php','Главная страница'],['feedback.php','Обратная связь']];
+    echo menu($array1);
+
+}
+else {
+    //bootstrap menu
+    $array2 = [['index.php', 'Главная страница'], ['pars.php', 'Погода'], ['feedback.php', 'Обратная связь'], ['list_feedback.php', 'Список отзывов']];
+    echo menu($array2);
+}
+?>
+
 <html xmlns:h="http://www.w3.org/1999/XSL/Transform">
 
 <head>
@@ -47,7 +65,7 @@
  * Date: 13.04.2016
  * Time: 11:27
  */
-session_start();
+
 if (isset($_POST['name'])) { $name = $_POST['name']; if ($name == '') { unset($name);}}
 if (isset($_POST['email'])) { $email = $_POST['email']; if ($email == '') { unset($email);}}
 if (isset($_POST['message'])) { $message = $_POST['message']; if ($message =='') { unset($message);} }
