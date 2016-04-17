@@ -20,7 +20,7 @@ else {
 
 <head>
     <meta charset="utf-8">
-    <title>Отзыв</title>
+    <title>Обратная связь</title>
     <!-- Bootstrap-->
 
     <link href = "css/bootstrap.css" rel="stylesheet">
@@ -28,32 +28,29 @@ else {
 </head>
 <body>
 <h2>Отзыв</h2>
-<form action="feedback.php" method="post">
+<form data-toggle="validator" role="form" action="feedback.php" method="post">
+    <div class="navbar-header">
+    <div class="form-group">
+        <label for="name">Имя пользователя:</label>
+        <input name="name" type="text" class="form-control" id="name" placeholder="Введите имя" required>
+    </div>
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input name="email" type="email" class="form-control" id="email" placeholder="email" required>
+    </div>
+    <div class="form-group" >
+        <label for="comment">Оставить Отзыв:</label>
+        <input name="comment" type="text" class="form-control" id="comment" style="height:150px " required >
+        <br>
+    </div>
 
-    <p>
-        <label>Ваше имя:<br></label>
-        <input name="name" type="text" size="15" maxlength="15" required="true">
+    <img src="capcha.php" alt="защитный код">
+    <div class="form-group" style="margin-top: 10px;">
+        <input name="capcha" type="text" class="form-group" >
+    </div>
 
-    </p>
-
-    <p>
-        <label>Ваш email:<br></label>
-        <input name="email" type="email" size="15" maxlength="25" required="true">
-    </p>
-
-    <p>
-        <label>Ваше сообщение:<br></label>
-        <textarea name="message" rows="10" cols="40" required="true"></textarea>
-    </p>
-
-    <img src="capcha.php" alt="защитный код" >
-    <br>
-    <input name="capcha" type="text" size="12" maxlength="25" required="true">
-
-<br>
-    <input type="submit" name="submit" value="Оставить отзыв">
-
-    </p></form>
+    <button type="submit" class="btn btn-success">Оставить отзыв</button>
+    </div>
 </body>
 </html>
 
