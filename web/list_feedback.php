@@ -1,3 +1,9 @@
+
+<?php
+include("func_menu.php");
+$array2=[['index.php','Главная страница'],['pars.php', 'Погода'],['feedback.php','Обратная связь'],['list_feedback.php','Список отзывов']];
+echo menu($array2);
+?>
 <html>
 <meta charset="utf-8">
 <head>
