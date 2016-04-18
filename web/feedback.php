@@ -24,10 +24,10 @@ else {
     <!-- Bootstrap-->
 
     <link href = "css/bootstrap.css" rel="stylesheet">
-    <link href = "css/style.css" rel="stylesheet">
+
 </head>
 <body>
-<h2>Отзыв</h2>
+<h2>Обратная связь</h2>
 <form data-toggle="validator" role="form" action="feedback.php" method="post">
     <div class="navbar-header">
     <div class="form-group">
@@ -38,15 +38,16 @@ else {
         <label for="email">Email:</label>
         <input name="email" type="email" class="form-control" id="email" placeholder="email" required>
     </div>
-    <div class="form-group" >
-        <label for="comment">Оставить Отзыв:</label>
-        <input name="comment" type="text" class="form-control" id="comment" style="height:150px " required >
-        <br>
-    </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <textarea name="comment" type="text" class="form-control" id="comment"   required ></textarea>
+            </div>
+        </div><br>
 
     <img src="capcha.php" alt="защитный код">
     <div class="form-group" style="margin-top: 10px;">
-        <input name="capcha" type="text" class="form-group" >
+        <label for="capcha">Введите символы на картинке:</label><br>
+        <input name="capcha" type="text" class="form-control" id="capcha" placeholder="capcha" required>
     </div>
 
     <button type="submit" class="btn btn-success">Оставить отзыв</button>
