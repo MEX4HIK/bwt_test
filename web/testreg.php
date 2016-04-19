@@ -16,8 +16,7 @@
  */
 session_start();//  вся процедура работает на сессиях. Именно в ней хранятся данные  пользователя, пока он находится на сайте. Очень важно запустить их в  самом начале странички!!!
 if (isset($_POST['login'])) { $login = $_POST['login']; if ($login == '') { unset($login);} } //заносим введенный пользователем логин в переменную $login, если он пустой, то уничтожаем переменную
-if (isset($_POST['password'])) { $password=$_POST['password']; if ($password =='') { unset($password);} }
-//заносим введенный пользователем пароль в переменную $password, если он пустой, то уничтожаем переменную
+if (isset($_POST['password'])) { $password=$_POST['password']; if ($password =='') { unset($password);} } //заносим введенный пользователем пароль в переменную $password, если он пустой, то уничтожаем переменную
 if (empty($login) or empty($password)) //если пользователь не ввел логин или пароль, то выдаем ошибку и останавливаем скрипт
 {
     exit ("Вы ввели не всю информацию, вернитесь назад и заполните все поля!");
@@ -34,16 +33,10 @@ $password = trim($password);
 include ("bd.php");// файл bd.php должен быть в той же папке, что и все остальные, если это не так, то просто измените путь
 
 $result = $conn->query('SELECT * FROM reg WHERE login= '.$conn->quote($login));
-//$stmt = $conn->prepare('SELECT * FROM reg WHERE id = :id');
-//$stmt->execute(array('id' => $id));
-//$result = $stmt->fetchAll();
 if ( count($result) ) {
     foreach($result as $myrow) {
-        // print_r($myrow);
-    }
+            }
 } 
-//$result = mysqli_query("SELECT * FROM reg WHERE login='$login'",$db); //извлекаем из базы все данные о пользователе с введенным логином
-//$myrow = mysqli_fetch_array($result);
 if (empty($myrow['password']))
 {
     //если пользователя с введенным логином не существует
@@ -53,7 +46,7 @@ if (empty($myrow['password']))
 else {
     //если существует, то сверяем пароли
     if ($myrow['password']==$password) {
-        //если пароли совпадают, то запускаем пользователю сессию! Можете его поздравить, он вошел!
+        //если пароли совпадают, то запускаем пользователю сессию! 
         $_SESSION['login']=$myrow['login'];
         $_SESSION['id']=$myrow['id'];//эти данные очень часто используются, вот их и будет "носить с собой" вошедший пользователь
         echo "Вы успешно вошли на сайт! <a href='index.php'>Главная страница</a>";

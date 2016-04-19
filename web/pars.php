@@ -1,4 +1,5 @@
 <?php
+//bootstrap menu
 include("func_menu.php");
 $array2=[['index.php','Главная страница'],['pars.php', 'Погода'],['feedback.php','Обратная связь'],['list_feedback.php','Список отзывов']];
 echo menu($array2);
@@ -8,7 +9,7 @@ echo menu($array2);
 <!-- Bootstrap-->
 
 <link href = "css/bootstrap.css" rel="stylesheet">
-<link href = "css/style.css" rel="stylesheet">
+
 
 <h2>Погода в Запорожье</h2>
 </html>
@@ -19,9 +20,6 @@ echo menu($array2);
  * Date: 11.04.2016
  * Time: 20:52
  */
-
-
-
 
 //Parsing
 #откуда будем парсить информацию:

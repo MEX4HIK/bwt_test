@@ -5,6 +5,7 @@ session_start();
 include ("func_menu.php");
 
 if (empty($_SESSION['login']) or empty($_SESSION['id'])){
+    //bootstrap menu
     $array1=[['index.php','Главная страница'],['feedback.php','Обратная связь']];
     echo menu($array1);
 
@@ -40,7 +41,8 @@ else {
     </div>
         <div class="row">
             <div class="col-xs-12">
-                <textarea name="comment" type="text" class="form-control" id="comment"   required ></textarea>
+                <label for="">Отзыв:</label>
+                <textarea name="message" type="text" class="form-control" id="message"   required ></textarea>
             </div>
         </div><br>
 

@@ -1,7 +1,6 @@
 <?php
+//bootstrap menu
 include ("func_menu.php");
-
-
 $array1=[['index.php','Главная страница'],['feedback.php','Обратная связь']];
 echo menu($array1);
 ?>

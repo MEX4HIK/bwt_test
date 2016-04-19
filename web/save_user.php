@@ -3,7 +3,7 @@
 <!-- Bootstrap-->
 
 <link href = "css/bootstrap.css" rel="stylesheet">
-<link href = "css/style.css" rel="stylesheet">
+
 </html>
 <?php
 /**
@@ -20,7 +20,7 @@ if (isset($_POST['email'])) { $email = $_POST['email']; if ($email == '') { unse
 if (isset($_POST['login'])) { $login = $_POST['login']; if ($login == '') { unset($login);}}
 if (isset($_POST['password'])) { $password = $_POST['password']; if ($password =='') { unset($password);} }
 
-
+//Форма для проверки валидации на стороне сервера
 echo "<html>
     <form action=\"save_user.php\" method=\"post\">
     <label>Ваше имя:<br></label>
@@ -29,7 +29,7 @@ echo "<html>
 </form>
 </html>";
 
-//Валидация
+//Валидация на стороне сервера
 if (isset($_POST['name']))
 {
     if (empty($_POST['name'])) {
@@ -72,20 +72,17 @@ else {
     include("bd.php");
 
     $result = $conn->query("SELECT id FROM reg WHERE login=" . $conn->quote($login));
-//$myrow = mysqli_fetch_array($result);
-    if (count($result)) {
-        foreach ($result as $myrow) {
-            // print_r($myrow);
+    if ( count($result) ) {
+        foreach($result as $myrow) {
+
         }
     } else {
-        echo "--------";
+        echo "Yes";
     }
-
-
     if (!empty($myrow['id'])) {
-        exit ("Извините, введённый вами логин уже зарегистрирован. Введите другой логин.");
+        exit ("Извините, введённый вами логин уже зарегистрирован. Введите другой логин. <a href='reg.php'>Вернуться к регистрации</a>");
     }
-//var_dump("INSERT INTO reg (name,last_name,date,sex,email,login,password) VALUES('$name','$last_name','$date','$sex','$email','$login','$password')");
+
     $result2 = $conn->query("INSERT INTO reg (name,last_name,sex,date,email,login,password) VALUES('$name','$last_name','$sex','$date','$email','$login','$password')");
 
 

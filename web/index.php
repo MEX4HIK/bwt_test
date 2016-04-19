@@ -5,8 +5,6 @@
  * Date: 09.04.2016
  * Time: 15:47
  */
-
-  
     session_start();
 include ("func_menu.php");
 ?>
@@ -20,23 +18,9 @@ include ("func_menu.php");
     <link href = "css/bootstrap.css" rel="stylesheet">
 </head>
 <body>
-
-
-
-<?php
-
-
-
-if (isset($_REQUEST['submitData']))
-{session_start();
-    unset($_SESSION['password']);
-    unset($_SESSION['login']);
-    unset($_SESSION['id']);//    уничтожаем переменные в сессиях
-    exit("<html><head><meta    http-equiv='Refresh' content='0;    URL=index.php'></head></html>");;}//в этом примере по нажатии кнопки выводится текст, может быть любой код.
-?>
-
 <?php
     if (empty($_SESSION['login']) or empty($_SESSION['id'])){
+        //bootstrap menu
         $array1=[['index.php','Главная страница'],['feedback.php','Обратная связь']];
         echo menu($array1);
 
@@ -57,13 +41,9 @@ if (isset($_REQUEST['submitData']))
     <a href=\"reg.php\">Зарегистрироваться</a>
     </form>
     </div>";
-
-
-
 }
 else
 {
-
 $a = "Вы вошли на сайт, как ".$_SESSION['login'];
 
     //bootstrap menu
@@ -77,14 +57,8 @@ $a = "Вы вошли на сайт, как ".$_SESSION['login'];
 <br>
 <button type=\"submit\" class=\"btn btn-danger\">Выйти</button>
 </form>";
-
-
-
-
 }
 ?>
-
-
 </body>
 </html>
 
